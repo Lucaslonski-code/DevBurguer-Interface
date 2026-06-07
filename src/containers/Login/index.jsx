@@ -1,5 +1,5 @@
 
-import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, Link, Button } from "./styles";
+import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, Link, Button, Span } from "./styles";
 
 import Logo from '../../assets/Login/Logo.png';
 
@@ -12,7 +12,9 @@ export function Login() {
             </LeftContainer>
             <RightContainer>
                 <Title>
-                    Olá, seja bem-vindo ao <span>DevBurguer</span>! Acesse com seu <span>Login e senha.</span>
+                    Olá, seja bem-vindo ao <Span>DevBurguer</Span>!
+                    <br></br>
+                    Acesse com seu <Span>Login e senha.</Span>
                 </Title>
                 <Form>
                     <InputContainer>
@@ -26,7 +28,7 @@ export function Login() {
                     <Link>Esqueci minha senha</Link>
                     <Button>Entrar</Button>
                 </Form>
-                <Link>Não tem uma conta? Cadastre-se</Link>
+                <p>Não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
             </RightContainer>
         </Container>
     );
