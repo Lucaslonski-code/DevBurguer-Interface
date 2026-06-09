@@ -12,8 +12,8 @@ import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, 
 export function Login() {
 
     const schema = yup.object({
-        Email: yup.string().required().email(),
-        Senha: yup.string().min(6).required(),
+        Email: yup.string().required("Email é obrigatório").email("Digite um email válido"),
+        Senha: yup.string().min(6, "A senha deve ter pelo menos 6 caracteres").required("Senha é obrigatória"),
     }).required();
 
     const { register, handleSubmit, formState: { errors }
@@ -40,10 +40,13 @@ export function Login() {
                     <InputContainer>
                         <label>Email</label>
                         <input type="email" placeholder="Digite seu email" {...register("Email")} />
+                        <p>{errors?.Email?.message}</p>
+                         {/* ELVIS OPERATOR para verificar se existe a propriedade message dentro do objeto errors.Email, caso exista, exibe a mensagem de erro correspondente ao campo Email.  */}
                     </InputContainer>
                     <InputContainer>
                         <label>Senha</label>
                         <input type="password" placeholder="Digite sua senha" {...register("Senha")} />
+                        <p>{errors?.Senha?.message}</p>
                     </InputContainer>
                     <Link>Esqueci minha senha</Link>
                     <Button type="submit">Entrar</Button>
