@@ -6,11 +6,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0px;
     box-sizing: border-box;
     outline: none;
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
     font-weight: 500;
+    font-family: "Playfair Display", serif;
   }
-  button {
+  button, a {
     cursor: pointer;
   }
 `;

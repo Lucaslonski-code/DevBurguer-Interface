@@ -44,13 +44,13 @@ export const RightContainer = styled.div`
     background-image: url('${BackgroundLogin2}');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0,40%);
+    background-color: #252323;
 
     p {
         color: #fff;
         font-size: 14px;
         a {
-            color: purple;
+            color: #9758A6;
             text-decoration: underline;
         }
     }
@@ -59,9 +59,14 @@ export const RightContainer = styled.div`
 
 export const Title = styled.h2`
   color: #fff;
-  font-size: 30px;
-  margin-bottom: 20px;
-  font-weight: 900;
+  width: 100%;
+  max-width: 400px;
+  font-size: 26px;
+  margin-bottom: 4px;
+  font-family: "Alfa Slab One", serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-left: 40px;
 `;
 
 export const Form = styled.form`
@@ -96,7 +101,9 @@ export const InputContainer = styled.div`
 `;
 
 export const Span = styled.span`
-    color: purple;
+    color: #9758A6;
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
 `;
 
 export const Link = styled.a`
@@ -107,12 +114,4 @@ export const Link = styled.a`
     Link:hover {
         text-decoration: underline;
     }
-`;
-
-export const Button = styled.button`
-    font-size: 14px;
-    width: 100%;
-    max-width: 140px;
-    height: 26px;
-    margin: -4px;
 `;
