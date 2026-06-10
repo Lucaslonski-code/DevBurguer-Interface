@@ -9,6 +9,8 @@ import Logo from '../../assets/Login/Logo.png';
 import { Button } from "../../components/Button";
 import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, Link, Span } from "./styles";
 
+import { api } from '../../services/api.js'
+
 export function Login() {
 
     const schema = yup.object({
@@ -21,8 +23,11 @@ export function Login() {
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data) => {
-       console.log(data);
+    const onSubmit = async (data) => {
+        const response = await api.post('/session', {
+            email: data.email,
+            password: data.password,
+        });
     };
 
     return (
