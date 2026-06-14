@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { Link as ReactLink } from 'react-router-dom';
 import BackgroundLogin from '../../assets/Login/Background-login-cadastro.jpg';
 import BackgroundLogin2 from '../../assets/Login/Background2-login-cadastro.png';
 
@@ -108,12 +109,13 @@ export const InputContainer = styled.div`
 
 `;
 
-export const Link = styled.a`
+export const Link = styled(ReactLink)`
     color: #fff;
     font-size: 12px;
     margin-top: -20px;
+    text-decoration: none;
 
-    Link:hover {
+    &:hover {
         text-decoration: underline;
     }
 `;

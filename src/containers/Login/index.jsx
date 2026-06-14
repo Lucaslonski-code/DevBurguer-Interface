@@ -7,10 +7,13 @@ import * as yup from "yup";
 import Logo from '../../assets/Login/Logo.png';
 import { Button } from "../../components/Button";
 import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, Link, Span } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 import { api } from '../../services/api.js'
 
 export function Login() {
+
+    const navigate = useNavigate();
 
     const schema = yup.object({
         Email: yup.string().required("Email é obrigatório").email("Digite um email válido"),
@@ -30,7 +33,12 @@ export function Login() {
             }),
             {
                 pending: 'Verificando seus dados',
-                sucess: 'Seja bem-vindo',
+                success: () => {
+                    setTimeout(() => {
+                        navigate('/');
+                    }, 2000);
+                    return 'Login realizado com sucesso!';
+                },
                 error: 'Email ou senha incorretos'
             }
         )};
@@ -61,7 +69,7 @@ export function Login() {
                     <Link>Esqueci minha senha</Link>
                     <Button type="submit">Entrar</Button>
                 </Form>
-                <p>Não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
+                <p>Não tem uma conta? <Link to="/cadastro">Cadastre-se</Link></p>
             </RightContainer>
         </Container>
     );

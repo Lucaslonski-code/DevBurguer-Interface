@@ -1,15 +1,20 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Login } from "../containers/Login";
 import { Register } from "../containers/Register";
+import { Home } from "../containers/home";
 
-export const router = createBrowserRoouter([
+export const router = createBrowserRouter([
     {
-        path: '/',
+        path: '/login',
         element: <Login/>
     },
     {
-        path: '/users',
+        path: '/cadastro',
         element: <Register/>
+    },
+        {
+        path: '/',
+        element: <Home/>
     }
 ])
 
