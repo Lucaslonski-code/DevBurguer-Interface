@@ -6,7 +6,6 @@ import * as yup from "yup";
 import Logo from '../../assets/Login/Logo.png';
 import { Button } from "../../components/Button/index.jsx";
 import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, Link } from "./styles.js";
-import { Link as ReactLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import { api } from '../../services/api.js'
@@ -91,7 +90,7 @@ export function Register() {
                     <Button type="submit">Criar Conta</Button>
                 </Form>
 
-                <p>Já possui uma conta? <Link to="/sessions">Faça login</Link></p>
+                <p>Já possui uma conta? <Link to="/login">Faça login</Link></p>
 
             </RightContainer>
         </Container>
