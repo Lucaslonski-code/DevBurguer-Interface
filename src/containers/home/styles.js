@@ -1,9 +1,7 @@
 
 import styled from "styled-components";
-import BannerHome from '../../assets/homes/Home.jpg';
+import BannerHome from '../../assets/homes/BurguerHome.png';
 import Background2 from '../../assets/Login/Background2-login-cadastro.png';
-
-
 
 export const Main = styled.main`
     height: 100vh;
@@ -12,33 +10,35 @@ export const Main = styled.main`
 
 export const Banner = styled.div`
     background: url('${BannerHome}');
+    background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    max-height: 26%;
-    width: 100%;
+    background-size: cover; 
+    background-position: center bottom 38%; 
+    height: 40vh;
+    width: 100vw;
 
     h1 {
-        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 600;
+        position: absolute;
+        font-size: 26px;
         color: #f4f4f4;
-        right: 20%;
+        right: 24%;
         top: 10%;
     }
 
 `;
 
 export const Container = styled.section`
-    background: linear-gradient(rgba(255, 255, 255 0.5), rgba(255, 255, 255, 0)),  url('${Background2}');
+    background: #f4f4f4 url('${Background2}');
+    background-size: cover;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    max-height: 74%;
-    color: #f4f4f4;
+    justify-content: center;
+    width: 100vw;
+    height: 70vh;
+    max-height: 800px;
+    color: #f7f7f7; 
 `;
 
 export const Content = styled.div``;
