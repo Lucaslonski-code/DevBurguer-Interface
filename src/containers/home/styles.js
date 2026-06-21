@@ -30,7 +30,7 @@ export const Banner = styled.div`
 `;
 
 export const Container = styled.section`
-    background: #f4f4f4 url('${Background2}');
+    background: linear-gradient(1 1 1 0.5) url('${Background2}');
     background-size: cover;
     display: flex;
     align-items: center;
