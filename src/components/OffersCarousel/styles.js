@@ -6,6 +6,7 @@ export const Container = styled.div`
     }
 
     padding-left: 30px;
+    max-width: 80vw;
 `;
 
 export const Title = styled.h2`
@@ -29,25 +30,24 @@ export const Title = styled.h2`
 `;
 
 export const ContainerItems = styled.div`
-    background: url('${(props) => props.imageUrl}'), no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 20px;
+  background: url('${props => props.$imageUrl}'), no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
 
-    display: flex;
-    align-items: center;
-    padding: 20px 10px;
-    width: 100%;
-    height: 220px;
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  width: 200px;   /* largura fixa */
+  height: 220px;
 
-    p {
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 10px 30px;
-        border-radius: 30px;
-        font-size: 22px;
-        font-weight: bold;
-        margin-top: 60px;
-    }
+  p {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 60px;
+  }
 `;
-

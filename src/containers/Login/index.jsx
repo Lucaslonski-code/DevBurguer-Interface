@@ -70,10 +70,11 @@ export function Login() {
                         <p>{errors?.Senha?.message}</p>
                     </InputContainer>
                     <Link>Esqueci minha senha</Link>
-                    <Button type="submit" href='/home'>Entrar</Button>
+                    <Button type="submit" to='/'>Entrar</Button>
                 </Form>
                 <p>Não tem uma conta? <Link to="/cadastro">Cadastre-se</Link></p>
             </RightContainer>
         </Container>
     );
 }
+

@@ -15,7 +15,7 @@ export function CategoriesCarousel() {
         async function loadCategories(){
             const { data } = await api.get('/categories');
 
-            setCategories(data);
+            setCategories(data.categories);
         }
 
         loadCategories();
@@ -47,10 +47,10 @@ export function CategoriesCarousel() {
             <Carousel
             responsive={responsive}
             infinite={true}
-            partialVisbile={false}
+            partialVisible={false}
             itemClass='carousel-item'
             >
-                {categories.map( category => (<ContainerItems key={category.id} imageUrl={category.url}><p>{category.name}</p></ContainerItems>))}
+                {categories.map( category => (<ContainerItems key={category.id} $imageUrl={category.url}><p>{category.name}</p></ContainerItems>))}
 
             </Carousel>
         </Container>

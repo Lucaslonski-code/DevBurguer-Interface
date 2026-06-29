@@ -5,17 +5,18 @@ import 'react-multi-carousel/lib/styles.css';
 
 import { api } from '../../services/api';
 
-import { Title, ContainerItems, Container} from './styles.js';
+import { Title, ContainerItems, Container } from './styles.js';
 
 
 export function OffersCarousel() {
     const [offers, setOffers] = useState([])
 
     useEffect(() => {
-        async function loadProducts(){
+        async function loadProducts() {
             const { data } = await api.get('/products');
-
-            const onlyOffers = data.filter(products => products.offer);
+            console.log('Resposta /products:', data);
+            const onlyOffers = data.products.filter(product => product.offer);
+            console.log('Ofertas filtradas:', onlyOffers);
             setOffers(onlyOffers);
         }
 
@@ -41,17 +42,17 @@ export function OffersCarousel() {
         },
     };
 
-    return(
+    return (
         <Container>
             <Title>Ofertas do dia</Title>
 
             <Carousel
-            responsive={responsive}
-            infinite={true}
-            partialVisbile={false}
-            itemClass='carousel-item'
+                responsive={responsive}
+                infinite={true}
+                partialVisible={false}
+                itemClass='carousel-item'
             >
-                {offers.map( product => (<ContainerItems key={product.id} imageUrl={product.url}><p>{product.name}</p></ContainerItems>))}
+                {offers.map(product => (<ContainerItems key={product.id} $imageUrl={product.url}><p>{product.name}</p></ContainerItems>))}
 
             </Carousel>
         </Container>

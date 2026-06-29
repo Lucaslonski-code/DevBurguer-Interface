@@ -38,6 +38,7 @@ export function Register() {
                 name: data.name,
                 email: data.email,
                 password: data.password,
+                admin: false
             }, {
                 validateStatus: () => true,
             });
